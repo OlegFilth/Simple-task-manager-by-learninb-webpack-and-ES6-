@@ -26,13 +26,15 @@ const controller = ((uiCtrl, lcCtrl) => {
 
   const deleteItem = (event) => {
     let id, itemID;
-    itemID = event.target.parentNode.parentNode.id;
-    if (itemID) {
-      uiCtrl.deleteListItem(itemID);
-      itemID = itemID.split('-');
-      id = itemID[1];
-      lcCtrl.deleteItem(id);
-    }
+    if (event.target.tagName === 'I') {
+      itemID = event.target.parentNode.parentNode.id;
+      if (itemID) {
+        uiCtrl.deleteListItem(itemID);
+        itemID = itemID.split('-');
+        id = itemID[1];
+        lcCtrl.deleteItem(id);
+      }
+    } return;
   }
 
   const deleteAllItems = () => {
