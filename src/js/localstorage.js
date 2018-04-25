@@ -32,7 +32,6 @@ export const localstoreController = (() => {
       data.tasks = JSON.parse(localStorage.getItem('items'));
       index = data.tasks.findIndex((element) => id == element.id);
       data.tasks.splice(index, 1);
-      console.log(data.tasks);
       localStorage.setItem('items', JSON.stringify(data.tasks));
     },
 

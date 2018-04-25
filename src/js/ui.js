@@ -35,10 +35,8 @@ export const uiController = (() => {
     filter:() => {
       const value = domElements.filterInput.value.toLowerCase();
       const listItems = document.querySelectorAll('.collection-item');
-      console.log(listItems);
       if (listItems.length > 0) {
         Array.from(listItems).forEach((element) => {
-          console.log(element.textContent.toLocaleLowerCase().includes(value));
           if (element.textContent.includes(value)) {
             element.style.display = 'flex';
           } else {
